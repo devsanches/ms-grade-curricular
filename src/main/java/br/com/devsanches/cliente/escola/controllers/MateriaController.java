@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import br.com.devsanches.cliente.escola.dtos.MateriaDTO;
 import br.com.devsanches.cliente.escola.entities.MateriaEntity;
 import br.com.devsanches.cliente.escola.repositories.IMateriaRepository;
 import br.com.devsanches.cliente.escola.services.MateriaService;
@@ -40,13 +41,13 @@ public class MateriaController {
 	}
 	
 	@PostMapping
-	public ResponseEntity<Boolean> cadastrarMateria(@RequestBody MateriaEntity materia) {
-		return ResponseEntity.status(HttpStatus.OK).body(this.materiaService.cadastrar(materia));
+	public ResponseEntity<Boolean> cadastrarMateria(@RequestBody MateriaDTO materia) {
+		return ResponseEntity.status(HttpStatus.CREATED).body(this.materiaService.cadastrar(materia));
 	}
 	
 	
 	@PutMapping
-	public ResponseEntity<Boolean> atualizarMateria(@RequestBody MateriaEntity materia) {
+	public ResponseEntity<Boolean> atualizarMateria(@RequestBody MateriaDTO materia) {
 		return ResponseEntity.status(HttpStatus.OK).body(this.materiaService.atualizar(materia));	
 	}
 	
