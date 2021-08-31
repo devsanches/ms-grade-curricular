@@ -78,7 +78,7 @@ public class MateriaService implements IMateriaService {
 				ModelMapper mapper = new ModelMapper();
 				
 				
-				MateriaEntity materiaEntityAtualizada =  mapper.map(materiaOptional.get(), MateriaEntity.class);
+				MateriaEntity materiaEntityAtualizada =  mapper.map(materia, MateriaEntity.class);
 				
 				this.materiaRepository.save(materiaEntityAtualizada);
 				return true;
